@@ -1,10 +1,17 @@
 <template lang="">
   <div id="bookingsList">
-    <div class="bookings" v-for="booking in bookings">
-      <p>{{booking.name}}, {{booking.email}}, Checked in? {{booking.checkedIn}}</p>
-      <input @click="toggleCheckedIn(booking)" type="checkbox" id="checkedIn" v-model="booking.checkedIn">
-      <button @click="handleDelete(booking._id)">Delete</button>
-    </div>
+    <h2>Bookings</h2>
+    <table class="bookings" v-for="booking in bookings">
+      <tr>
+        <td>{{booking.name}}</td>
+        <td>{{booking.email}}</td>
+        <td>Checked in?</td>
+        <td>
+          <input @click="toggleCheckedIn(booking)" type="checkbox" id="checkedIn" v-model="booking.checkedIn">
+          <button @click="handleDelete(booking._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
 
@@ -37,9 +44,17 @@ export default {
 
   <style lang="css" scoped>
 
-  #bookingsList {
-    font-family: Helvetica, sans-serif;
-    font-size: 0.5em;
-  }
+    #bookingsList {
+      display: flex;
+      flex-direction: column;
+      font-family: Helvetica, sans-serif;
+      font-size: 0.5em;
+    }
+
+    td {
+      text-align: left;
+      padding-right: 2em;
+    }
+
 
   </style>

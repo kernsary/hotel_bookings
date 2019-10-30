@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Hotel</h1>
     <booking-form/>
     <bookings-list :bookings="bookings"></bookings-list>
   </div>
@@ -44,5 +45,8 @@ export default {
 </script>
 
 <style>
-
+#app {
+  display: flex;
+  flex-direction: column;
+}
 </style>
