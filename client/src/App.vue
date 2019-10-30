@@ -24,6 +24,13 @@ export default {
 
   mounted() {
     this.fetchData();
+
+    eventBus.$on('booking-added', booking => this.bookings.push(booking));
+
+    eventBus.$on('booking-deleted', id => {
+      const index = this.bookings.findIndex(booking => booking._id === id);
+      this.bookings.splice(index, 1);
+    })
   },
 
   methods: {
