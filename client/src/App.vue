@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <booking-form/>
     <bookings-list :bookings="bookings"></bookings-list>
   </div>
 </template>
